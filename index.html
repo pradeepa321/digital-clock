@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="stylesheet.css">
+    <title>Document</title>
+	
+</head>
+<body>
+	
+	<div class="clock">
+		<!-- <span>time:</span> -->
+    <!-- <input type="radio" name="pm" id="am">AM -->
+    <!-- <input type="radio" name="pm"id="pm">PM -->
+    <!-- <h1 id="clock"> -->
+
+    </h1>
+    <span>date:</span>
+    <h2 id="month">
+    </h2>
+    <span>day:</span>
+    <input type="radio" name="week" id="sun">sun
+    <input type="radio" name="week"id="mon">mon
+    <input type="radio" name="week"id="tus">tus
+    <input type="radio" name="week"id="wed">wed
+    <input type="radio" name="week"id="thr">thr
+    <input type="radio" name="week"id="fri">fri
+    <input type="radio" name="week"id="sat">sat
+    <h3 id="day">
+	
+    </h3>
+	</div>
+    
+    <script>
+
+        setInterval(ssa,1000)
+        function ssa(){
+            let date=new Date();
+            let clock=document.getElementById('clock');
+        clock.innerHTML=date.getHours(),'-',date.getMinutes(),'-',date.getSeconds();
+        }
+        let date=new Date();
+        let am=document.getElementById('am')
+        let pm=document.getElementById('pm') 
+        
+		
+        let month=document.getElementById('month');
+        month.innerHTML=date.toLocaleDateString();
+        	
+        let day=document.getElementById('day')
+        let sun=document.getElementById('sun')
+        let mon=document.getElementById('mon')
+        let tus=document.getElementById('tus')
+        let wed=document.getElementById('wed')
+        let thr=document.getElementById('thr')
+        let fri=document.getElementById('fri')
+        let sat=document.getElementById('sat')
+
+        switch(date.getDay()){
+            case 0:
+            day.innerHTML='sunday'
+            sun.setAttribute('checked','checked');
+            break;
+            case 1:
+            day.innerHTML='monday'
+            mon.setAttribute('checked','checked');
+            break;
+            case 2:
+            day.innerHTML='tuesday'
+            tus.setAttribute('checked','checked');
+            break;
+            case 3:
+            day.innerHTML='wednesday'
+            wed.setAttribute('checked','checked');
+            break;
+            case 4:
+            day.innerHTML='thursday'
+            thr.setAttribute('checked','checked');
+            break;
+            case 5:
+            day.innerHTML='friday'
+            fri.setAttribute('checked','checked');
+            break;
+            case 6:
+            day.innerHTML='saturday'
+            sat.setAttribute('checked','checked');
+            break;
+            default:
+            day.innerHTML='hi'
+        }
+		
+		 let a=new Date();
+		 
+		  let d=a.getDate();
+		  let m=a.getMonth()+1;
+		  let Y=a.getFullYear();
+		
+		 
+		 document.write(d+":"+ m+":"+ Y)
+		
+    </script>
+</body>
+</html>
